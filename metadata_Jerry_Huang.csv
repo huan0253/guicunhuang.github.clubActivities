@@ -1,0 +1,17 @@
+column_name,data_type,character_maximum_length,description,source
+coach_id,character,20,Surrogate key,assigned by system or user defined
+coach_name,character,50,coach's name,usually entered by user
+coach_email,character,30,coach's email,usually entered by user
+activity_id,character,20,Surrogate key,assigned by system or user defined
+activity_name,character,30,activity's name,usually entered by user
+member_id,numeric,,Surrogate key,assigned by system or user defined
+member_name,character,40,member's name,usually entered by user
+member_email,character,40,member's email,usually entered by user
+team_id,character,30,Surrogate key,assigned by system or user defined
+team_name,character,40,team's name,usually entered by user
+trainingcourse_fee,double precision,,traningcourse's fee,usually entered by user
+coach_id,character,20,Surrogate key,assigned by system or user defined
+activity_id,character,20,Surrogate key,assigned by system or user defined
+club_id,character,20,Surrogate key,assigned by system or user defined
+club_name,character varying,30,club's name,usually entered by user
+contact_number,numeric,,club's telephone number,usually entered by user

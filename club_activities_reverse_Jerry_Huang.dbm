@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1" last-position="0,138" last-zoom="0.75"
+	 default-schema="public" default-owner="postgres">
+<role name="huan0253"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<role name="web"
+      inherit="true"
+      encrypted="true"
+      password="********">
+	<roles names="huan0253" role-type="member" />
+</role>
+
+<database name="clubActivities" encoding="UTF8" lc-collate="English_Canada.1252" lc-ctype="English_Canada.1252" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="clubs">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="120" y="580"/>
+	<column name="id" not-null="true">
+		<type name="character" length="20"/>
+	</column>
+	<column name="name">
+		<type name="character varying" length="30"/>
+	</column>
+	<column name="contact_number">
+		<type name="numeric" length="20" precision="0"/>
+	</column>
+	<constraint name="pk_club" type="pk-constr" table="public.clubs">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="activities">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="120"/>
+	<column name="id" not-null="true">
+		<type name="character" length="20"/>
+	</column>
+	<column name="name">
+		<type name="character" length="30"/>
+	</column>
+	<constraint name="pk_activity" type="pk-constr" table="public.activities">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="members">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="360" y="580"/>
+	<column name="id" not-null="true">
+		<type name="character" length="20" precision="0"/>
+	</column>
+	<column name="full_name">
+		<type name="character" length="50"/>
+	</column>
+	<column name="email">
+		<type name="character" length="50"/>
+	</column>
+	<constraint name="pk_member" type="pk-constr" table="public.members">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="coaches">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="480" y="100"/>
+	<column name="id" not-null="true">
+		<type name="character" length="20"/>
+	</column>
+	<column name="full_name">
+		<type name="character" length="50"/>
+	</column>
+	<column name="email">
+		<type name="character" length="50"/>
+	</column>
+	<constraint name="coach_pk" type="pk-constr" table="public.coaches">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="teams">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="220" y="300"/>
+	<column name="id" not-null="true">
+		<type name="character" length="30"/>
+	</column>
+	<column name="name">
+		<type name="character" length="20"/>
+	</column>
+	<column name="trainingcourse_fee">
+		<type name="float" length="0"/>
+	</column>
+	<column name="coach_id">
+		<type name="character" length="20"/>
+	</column>
+	<column name="activity_id">
+		<type name="character" length="20"/>
+	</column>
+	<constraint name="team_pk" type="pk-constr" table="public.teams">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="member_team">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="220" y="440"/>
+	<column name="member_id" not-null="true">
+		<type name="numeric" length="20" precision="0"/>
+	</column>
+	<column name="team_id" not-null="true">
+		<type name="character" length="30"/>
+	</column>
+	<column name="club_id">
+		<type name="character" length="20"/>
+	</column>
+	<constraint name="member_team_pk" type="pk-constr" table="public.member_team">
+		<columns names="team_id,member_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<textbox name="clubActivities" font-size="11">
+	<position x="260" y="100"/>
+	<comment><![CDATA[project    CST8215
+module     ClubActivities
+company    Algonquin college
+version    1.0
+date of creation   July 23, 2021
+last change        July 28, 2021]]></comment>
+</textbox>
+
+<constraint name="team_fk1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.coaches" table="public.teams">
+	<columns names="coach_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="team_fk2" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.activities" table="public.teams">
+	<columns names="activity_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="member_team_fk1" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.members" table="public.member_team">
+	<columns names="member_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="member_team_fk2" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.teams" table="public.member_team">
+	<columns names="team_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="member_team_fk3" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.clubs" table="public.member_team">
+	<columns names="club_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="teams_fk2" type="relfk"
+	 custom-color="#83af1f"
+	 src-table="public.teams"
+	 dst-table="public.coaches" reference-fk="team_fk1"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="team_fk1" type="relfk"
+	 custom-color="#5aa578"
+	 src-table="public.teams"
+	 dst-table="public.activities" reference-fk="team_fk2"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="member_team_fk3" type="relfk"
+	 custom-color="#4b3e56"
+	 src-table="public.member_team"
+	 dst-table="public.members" reference-fk="member_team_fk1"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="member_team_fk1" type="relfk"
+	 custom-color="#9ac721"
+	 src-table="public.member_team"
+	 dst-table="public.teams" reference-fk="member_team_fk2"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="member_team-fk2" type="relfk"
+	 custom-color="#249b49"
+	 src-table="public.member_team"
+	 dst-table="public.clubs" reference-fk="member_team_fk3"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+</dbmodel>

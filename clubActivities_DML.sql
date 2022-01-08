@@ -1,0 +1,94 @@
+﻿--Program by Jerry
+--July24, 2021
+
+INSERT INTO CLUBS VALUES ('EVERG','Ever Game','6137821918');
+INSERT INTO CLUBS VALUES ('SportH','Hyper Sport','6133626715');
+INSERT INTO CLUBS VALUES ('MadisonB','Madison Budweiser','6137823632');
+INSERT INTO CLUBS VALUES ('SaintsT','The Saints','6135189821');
+INSERT INTO CLUBS VALUES ('CrosbyT','The Crosby Show','6133626716');
+
+INSERT INTO ACTIVITIES VALUES ('FOOTB','football');
+INSERT INTO ACTIVITIES VALUES ('BASKETB',' basketball');
+INSERT INTO ACTIVITIES VALUES ('BASEB',' baseball');
+INSERT INTO ACTIVITIES VALUES ('LACRO','Lacrosse');
+INSERT INTO ACTIVITIES VALUES ('HOCK',' hockey');
+INSERT INTO ACTIVITIES VALUES ('TABLE',' tabletennis');
+
+
+INSERT INTO MEMBERS VALUES ('10000','Mike Smith','mikesmith@gmail.com');
+INSERT INTO MEMBERS VALUES ('10002','Stone Breaker','stonebreaker@gmail.com');
+INSERT INTO MEMBERS VALUES ('10003','David Smith','davids@gmail.com');
+INSERT INTO MEMBERS VALUES ('10006','Jack Liu','jackliu@gmail.com');
+INSERT INTO MEMBERS VALUES ('10007','Elliot Peng','elliotpeng@gmail.com');
+INSERT INTO MEMBERS VALUES ('10009','Jack Brown','jackbrown@gmail.com');
+INSERT INTO MEMBERS VALUES ('10008','Taylor Number','taylorn@gmail.com');
+INSERT INTO MEMBERS VALUES ('10010','Bill Rusell','billr@gmail.com');
+INSERT INTO MEMBERS VALUES ('10011','John Madden','johnm@gmail.com');
+INSERT INTO MEMBERS VALUES ('10012','John Smith','johnsmith@gmail.com');
+INSERT INTO MEMBERS VALUES ('10013','Tom Madden','tommadden@gmail.com');
+INSERT INTO MEMBERS VALUES ('10014','Jerry Huang','jerryhuang@gmail.com');
+INSERT INTO MEMBERS VALUES ('10015','Aguang Zhang','aguangzh@gmail.com');
+INSERT INTO MEMBERS VALUES ('10016','Catcat Liang','catcatl@gmail.com');
+
+INSERT INTO COACHES VALUES ('coach001','Christino Ronaldo','christinor@gmail.com');
+INSERT INTO COACHES VALUES ('coach002','Mikael Jodan','mikaeljodan@gmail.com');
+INSERT INTO COACHES VALUES ('coach003','Lionel Andrés Messi','lionelmessi@gmail.com');
+INSERT INTO COACHES VALUES ('coach004','Kobe Brant','kobebrant@gmail.com');
+INSERT INTO COACHES VALUES ('coach005','Roger Clemens','rogercle@gmail.com');
+INSERT INTO COACHES VALUES ('coach006','Steve Carell','steveca@gmail.com');
+INSERT INTO COACHES VALUES ('coach008','Mick Foley','mickfoley@gmail.comh');
+INSERT INTO COACHES VALUES ('coach007','Alex Ovechkin','alexovechkin@gmail.com');
+INSERT INTO COACHES VALUES ('coach009','Tom Hanks','tomhank@gmail.com');
+
+
+INSERT INTO TEAMS VALUES ('ENTRY01F','Entry_level team',400,'coach001','FOOTB');
+INSERT INTO TEAMS VALUES ('INTERMEDIA01B','Intermedia_level team',600,'coach002','BASKETB');
+INSERT INTO TEAMS VALUES ('ENTRY02F','Entry_level team',400,'coach003','FOOTB');
+INSERT INTO TEAMS VALUES ('INTERMEDIA02B','Intermediate_level team',600,'coach002','BASKETB');
+INSERT INTO TEAMS VALUES ('ENTRY02B','Entry_level team',400,'coach004','BASKETB');
+INSERT INTO TEAMS VALUES ('ENTRY03B','Entry_level team',400,'coach005','BASEB');
+INSERT INTO TEAMS VALUES ('ENTRY04L','Entry_level team',400,'coach006','LACRO');
+INSERT INTO TEAMS VALUES ('INTERMEDIATE04L','INTERMEDIATE_level team',600,'coach008','LACRO');
+INSERT INTO TEAMS VALUES ('ENTRY05H','Entry_level team',400,'coach007','HOCK');
+INSERT INTO TEAMS VALUES ('ENTRY05T','Entry_level team',400,'coach009','TABLE');
+
+
+
+INSERT INTO MEMBER_TEAM VALUES ('10000','ENTRY01F','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10002','ENTRY01F','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10003','ENTRY01F','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10002','INTERMEDIA01B','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10006','INTERMEDIA01B','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10007','INTERMEDIA01B','EVERG');
+INSERT INTO MEMBER_TEAM VALUES ('10000','ENTRY02F','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10008','ENTRY02F','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10009','ENTRY02F','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10008','INTERMEDIA02B','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10010','INTERMEDIA02B','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10003','ENTRY02B','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10011','ENTRY02B','SportH');
+INSERT INTO MEMBER_TEAM VALUES ('10012','ENTRY03B','MadisonB');
+INSERT INTO MEMBER_TEAM VALUES ('10013','ENTRY04L','SaintsT');
+INSERT INTO MEMBER_TEAM VALUES ('10014','ENTRY05H','CrosbyT');
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
